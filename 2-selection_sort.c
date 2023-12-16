@@ -18,7 +18,7 @@ void selection_sort(int *array, size_t size)
 	{
 		flag = 0;
 		value = array[position];
-		while(check < size)
+		while (check < size)
 		{
 			if (array[checker] < value)
 			{
