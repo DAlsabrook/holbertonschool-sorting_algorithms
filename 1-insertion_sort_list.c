@@ -11,9 +11,10 @@ void insertion_sort_list(listint_t **list)
 	listint_t *tmp = *list, *unsorted = *list;
 	int flag = 0, checker = 1;
 
-	while(checker == 1)
+	if (*list == NULL)
+		return;
+	while (checker == 1)
 	{
-		printf("Loop:\n");
 		checker = 0;
 		while (unsorted != NULL)
 		{
