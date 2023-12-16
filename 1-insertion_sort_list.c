@@ -31,6 +31,7 @@ void insertion_sort_list(listint_t **list)
 			if (unsorted->prev != NULL && unsorted->n < unsorted->prev->n)
 			{
 				tmp = unsorted->prev;
+				print_list(*list);
 				continue;
 			}
 			tmp = unsorted;
