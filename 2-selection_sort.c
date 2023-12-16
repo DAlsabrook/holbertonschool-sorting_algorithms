@@ -18,10 +18,13 @@ void selection_sort(int *array, size_t size)
 	{
 		flag = 0;
 		value = array[position];
+		printf("Value: %d\n", value);
+		print_array(array, size);
 		while(check < size)
 		{
 			if (array[checker] < value)
 			{
+				printf("Found smaller: %d\n", array[check]);
 				hold_pos = checker;
 				value = array[checker];
 				flag = 1;
@@ -29,13 +32,18 @@ void selection_sort(int *array, size_t size)
 			checker++;
 			check++;
 		}
-		array[hold_pos] = array[position];
-		array[position] = value;
+		printf("Value after: %d\n", value);
+		printf("Position: %d", position);
 		if (flag == 1)
+		{
+			array[hold_pos] = array[position];
+			array[position] = value;
 			print_array(array, size);
+		}
 		position++;
 		pos++;
-		checker = position;
-		check = pos;
+		checker = position + 1;
+		check = pos + 1;
+		printf("\n\n");
 	}
 }
