@@ -3,7 +3,7 @@
  * bubble_sort - does a bit of sorting
  * @array: the array to use
  * @size: size of the array
- * 
+ *
  * Return: void
  */
 void bubble_sort(int *array, size_t size)
