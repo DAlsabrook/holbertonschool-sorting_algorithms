@@ -8,11 +8,13 @@
 */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *tmp = *list, *unsorted = *list;
+	listint_t *tmp, *unsorted;
 	int flag = 0;
 
 	if (list == NULL)
 		return;
+	tmp = *list;
+	unsorted = *list;
 	while (unsorted != NULL)
 	{
 		flag = 0;
