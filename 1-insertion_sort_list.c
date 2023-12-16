@@ -11,7 +11,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *tmp, *unsorted;
 	int flag = 0;
 
-	if (list == NULL)
+	if (*list == NULL)
 		return;
 	tmp = *list;
 	unsorted = *list;
