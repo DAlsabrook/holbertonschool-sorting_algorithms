@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 /**
  * quick_sort_recursive - recursive sorting
  * @array: array to sort
@@ -8,15 +7,15 @@
  *
  * Return: void
 */
-void quick_sort_recursive(int *array, int low, int high)
+void quick_sort_recursive(int *array, int low, int high, size_t size)
 {
 	int pivot;
 
 	if (low < high)
 	{
-		pivot = partition(array, low, high);
-		quick_sort_recursive(array, low, pivot - 1);
-		quick_sort_recursive(array, pivot + 1, high);
+		pivot = partition(array, low, high, size);
+		quick_sort_recursive(array, low, pivot - 1, size);
+		quick_sort_recursive(array, pivot + 1, high, size);
 	}
 }
 
@@ -43,7 +42,7 @@ void swap(int *x, int *y)
  *
  * Return: i
 */
-int partition(int *array, int low, int high)
+int partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
 	int i = low - 1, j;
@@ -53,11 +52,18 @@ int partition(int *array, int low, int high)
 		if (array[j] < pivot)
 		{
 			i++;
-			swap(&array[i], &array[j]);
+			if (i < j)
+			{
+				swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
 		}
 	}
-	swap(&array[i + 1], &array[high]);
-	print_array(array, high - low + 1);
+	if (array[i + 1] > array[high])
+	{
+		swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
 	return (i + 1);
 }
 
@@ -80,7 +86,7 @@ void quick_sort(int *array, size_t size)
 		if (array[i] > array[i + 1] && size > 0)
 		{
 			flag = 1;
-			quick_sort_recursive(array, 0, size - 1);
+			quick_sort_recursive(array, 0, size - 1, size);
 		}
 		size_i++;
 	}
