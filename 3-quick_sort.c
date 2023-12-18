@@ -15,11 +15,13 @@ void quick_sort_recursive(int *full_array, int *array, int low, int high, size_t
 	if (low < high)
 	{
 		pivot = partition(full_array, array, low, high, size);
-		printf("In recursive:");
+		printf("In recursive if statement:\n");
 		print_array(full_array, size);
 		quick_sort_recursive(full_array, array, low, pivot - 1, size);
 		quick_sort_recursive(full_array, array, pivot + 1, high, size);
 	}
+	printf("In partition out of if:\n");
+	print_array(full_array, size);
 }
 
 /**
@@ -57,12 +59,14 @@ int partition(int *full_array, int *array, int low, int high, size_t size)
 			swap(&array[i], &array[j]);
 			i++;
 			flag = 1;
+			printf("In partition loop:\n");
+			print_array(full_array, size);
 		}
 	}
 	swap(&array[i], &array[high]);
 	if (flag == 1)
 	{
-		printf("In partition:");
+		printf("In partition:\n");
 		print_array(full_array, size);
 	}
 	return (i);
@@ -78,6 +82,4 @@ int partition(int *full_array, int *array, int low, int high, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	quick_sort_recursive(array, array, 0, size - 1, size);
-	printf("In main quick sort:");
-	print_array(array, size);
 }
