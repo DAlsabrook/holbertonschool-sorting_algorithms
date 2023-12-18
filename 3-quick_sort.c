@@ -58,7 +58,7 @@ int partition(int *full_array, int *array, int low, int high, size_t size)
 		}
 	}
 	swap(&array[i], &array[high]);
-	if (flag = 1)
+	if (flag == 1)
 		print_array(full_array, size);
 	return (i);
 }
