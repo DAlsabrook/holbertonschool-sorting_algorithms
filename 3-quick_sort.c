@@ -18,7 +18,8 @@ void quick_sort_recursive(int *full_array, int *array, int low, int high, size_t
 		quick_sort_recursive(full_array, array, low, pivot - 1, size);
 		quick_sort_recursive(full_array, array, pivot + 1, high, size);
 	}
-	printf("\nIn recursive out of if #%d:\n", flag++);
+	printf("\nIn recursive out of if #%d:\n", flag);
+	flag++;
 	print_array(full_array, size);
 }
 
@@ -59,7 +60,8 @@ int partition(int *full_array, int *array, int low, int high, size_t size)
 		}
 	}
 	swap(&array[i], &array[high]);
-	printf("\nIn partition #%d:\n", count++);
+	printf("\nIn partition #%d:\n", count);
+	count++;
 	print_array(full_array, size);
 
 	return (i);
