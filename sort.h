@@ -1,6 +1,7 @@
 #ifndef SORT
 #define SORT
 #include <stddef.h>
+#include <stdio.h>
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -15,7 +16,7 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-void quick_sort_recursive(int *array, int low, int high, size_t size);
+void quick_sort_recursive(int *array, int low, int high);
 void swap(int *x, int *y);
 int partition(int *array, int low, int high);
 void quick_sort(int *array, size_t size);
