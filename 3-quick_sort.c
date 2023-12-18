@@ -4,9 +4,10 @@
  * @array: array to sort
  * @low: start of sort
  * @high: end of sort
+ * @size: size of original array
  *
  * Return: void
-*/
+ */
 void quick_sort_recursive(int *array, int low, int high, size_t size)
 {
 	int pivot;
@@ -39,6 +40,7 @@ void swap(int *x, int *y)
  * @array: array to partition
  * @low: where to start
  * @high: where to end
+ * @size: size of original array
  *
  * Return: i
 */
