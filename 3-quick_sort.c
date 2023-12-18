@@ -46,7 +46,7 @@ void swap(int *x, int *y)
 int partition(int *full_array, int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
-	int i = low, j;
+	int i = low, j, flag = 0;
 
 	for (j = low; j < high; j++)
 	{
@@ -54,12 +54,15 @@ int partition(int *full_array, int *array, int low, int high, size_t size)
 		{
 			swap(&array[i], &array[j]);
 			i++;
+			flag = 1;
 		}
 	}
 	swap(&array[i], &array[high]);
-	printf("\nIn partition:\n");
-	print_array(full_array, size);
-
+	if (flag = 1)
+	{
+		printf("\nIn partition:\n");
+		print_array(full_array, size);
+	}
 	return (i);
 }
 
