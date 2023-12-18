@@ -70,5 +70,6 @@ int partition(int *array, int low, int high)
 */
 void quick_sort(int *array, size_t size)
 {
-	quick_sort_recursive(array, 0, size - 1);
+	if (size > 0)
+		quick_sort_recursive(array, 0, size - 1);
 }
