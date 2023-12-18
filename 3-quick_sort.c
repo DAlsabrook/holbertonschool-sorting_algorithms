@@ -10,7 +10,7 @@
 */
 void quick_sort_recursive(int *full_array, int *array, int low, int high, size_t size)
 {
-	int pivot, flag = 0;
+	int pivot;
 
 	if (low < high)
 	{
@@ -46,7 +46,7 @@ void swap(int *x, int *y)
 int partition(int *full_array, int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
-	int i = low, j, count = 0;
+	int i = low, j;
 
 	for (j = low; j < high; j++)
 	{
