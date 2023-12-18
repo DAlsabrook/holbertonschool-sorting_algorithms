@@ -74,12 +74,13 @@ void quick_sort(int *array, size_t size)
 {
 	int i;
 
+	if (array == NULL)
+		return;
 	for (i = 0; array[i]; i++)
 	{
-		if (array[i] > array[i + 1])
+		if (array[i] > array[i + 1] && size > 0)
 		{
-			if (size > 0)
-				quick_sort_recursive(array, 0, size - 1);
+			quick_sort_recursive(array, 0, size - 1);
 		}
 	}
 	return;
