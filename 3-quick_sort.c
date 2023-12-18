@@ -46,7 +46,7 @@ void swap(int *x, int *y)
 int partition(int *full_array, int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
-	int i = low, j, flag = 0;
+	int i = low, j;
 
 	for (j = low; j < high; j++)
 	{
@@ -54,13 +54,10 @@ int partition(int *full_array, int *array, int low, int high, size_t size)
 		{
 			swap(&array[i], &array[j]);
 			i++;
-			print_array(full_array, size);
-			flag = 1;
 		}
 	}
 	swap(&array[i], &array[high]);
-	if (flag == 0)
-		print_array(full_array, size);
+	print_array(full_array, size);
 	return (i);
 }
 
@@ -74,5 +71,4 @@ int partition(int *full_array, int *array, int low, int high, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	quick_sort_recursive(array, array, 0, size - 1, size);
-	print_array(array, size);
 }
